@@ -1,0 +1,75 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- start linking  -->
+    
+    <!-- icon -->
+    <link rel="icon" href="assets/public/img/log.png">
+    <!-- end linking -->
+    <title>NutFlix - admin</title>
+  </head>
+  <body>
+  <!-- start admin -->
+  <section id="admin">
+    <!-- start sidebar -->
+    <div class="sidebar">
+      <!-- start with head -->
+      <div class="head">
+        <div class="logo">
+          <img src="assets/public/img/logo-admin.png" alt="">
+        </div>
+        <a href="#" class="btn btn-danger">SUBMIT new MOVIE</a>
+      </div>
+      <!-- end with head -->
+      <!-- start the list -->
+      <div id="list">
+        <ul class="nav flex-column">
+          <li class="nav-item"><a [routerLink]="['/category']" class="nav-link"><i class="fa fa-inbox"></i>Categorias</a></li>
+          <li class="nav-item"><a [routerLink]="['/game']" class="nav-link"><i class="fa fa-inbox"></i>Partidos</a></li>
+          <li class="nav-item"><a [routerLink]="['/team']" class="nav-link"><i class="fa fa-inbox"></i>Equipos</a></li>
+          <li class="nav-item"><a [routerLink]="['/resultado']" class="nav-link"><i class="fa fa-user"></i>Origen</a></li>
+          <li class="nav-item"><a [routerLink]="['/resultado']" class="nav-link"><i class="fa fa-user"></i>Resultado</a></li>
+          <li class="nav-item"><a [routerLink]="['/resultado']" class="nav-link"><i class="fa fa-user"></i>Liga</a></li>
+        </ul>
+      </div>
+      <!-- end the list -->
+    </div>
+    <!-- end sidebar -->
+    <!-- start content -->
+    <div class="content">
+      <!-- start content head -->
+      <div class="head">
+        <!-- head top -->
+        <div class="top">
+          <div class="left">
+            <button id="on" class="btn btn-info"><i class="fa fa-bars"></i></button>
+            <button id="off" class="btn btn-info hide"><i class="fa fa-align-left"></i></button>
+            <button class="btn btn-info hidden-xs-down"><i class="fa fa-expand-arrows-alt"></i></button>
+            <button class="btn btn-info hidden-xs-down"><i class="fa fa-home"></i>Back Home</button>
+          </div>
+          <div class="right">
+            <button class="btn btn-info hidden-xs-down"><i class="fa fa-bell"></i></button>
+            <button class="btn btn-info hidden-xs-down"><i class="fa fa-envelope"></i></button>
+            <div class="dropdown">
+              <button class="btn btn-info dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">mohamed</button>
+              <div class="dropdown-menu" aria-labelledby="userDropdown">
+               <a class="dropdown-item" href="#">profile</a>
+               <a class="dropdown-item" href="#">sitting</a>
+               <a class="dropdown-item" href="#">log out</a>
+             </div>
+            </div>
+          </div>
+        </div>
+          
+      </div>
+  
+    
+   
+      <router-outlet></router-outlet>
+    
+    </div>
+   
+  </section>
+ 

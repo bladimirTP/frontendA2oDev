@@ -1,0 +1,124 @@
+<div>
+    <H2>Equipos</H2>
+    
+     <div class="row">
+            <div class="col-sm-2">
+                <button  (click)="resetForm();get_origin();get_category();get_person()"  class="btn btn-primary">Nuevo Equipo</button>
+             </div>
+        
+      <!--   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <label id="inputs" for="idcategoria">Categoria</label>
+            <select   name="filtrar" id="inputs"  [(ngModel)]="filtroproducto"  class="form-control">
+                <option selected>
+                   
+                </option>
+                <option *ngFor="let item of  seleccioncate">
+                    {{item.categoria}}
+                </option>
+                
+            </select>
+          
+        </div> -->
+      
+    </div>
+
+   
+
+    <div  id="lado"  class="form-control" class="row">
+      
+        <div  *ngIf="estate==1">
+            <div id="panelbodi" >
+            <div  class="panel-body">
+            <div class="row">
+                    <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label id="inputs" for="controNombre">Nombre</label>
+                        <input id="inputs" type="text" [(ngModel)]="intputsteam.name" class="form-control" placeholder="nombre de equipo">
+                    </div>
+                    </div>
+            
+                <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <label id="inputs" for="id_category">Categoria</label>
+					<select id="inputs" (change)="rescategory($event)"  class="form-control">
+                        <option *ngFor="let cate of category" [value]="cate.id_category">
+                            {{cate.name}}
+                        </option>
+                    </select>
+                  
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <label id="inputs" for="id_origin">Origen</label>
+					<select id="inputs" (change)="resorigin($event)"  class="form-control">
+                        <option *ngFor="let orig of origin" [value]="orig.id_origin">
+                            {{orig.country}}
+                        </option>
+                    </select>
+                  
+                </div>
+
+               
+            </div>
+           
+                    <div>
+                        <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
+                            <label id="inputs" for="id_person">Miembro</label>
+                            <select  id="inputs" (change)="resperson($event)"  class="form-control">
+                                <option   *ngFor="let pers of person" [value]="pers.id_person">
+                                    {{pers.name}}
+                                </option>
+                            </select>
+                        
+                        </div>
+
+                    </div>
+            
+        </div>
+        <div id="boton" class="col-6">
+            <button  type="button" (click)="agregar_equipo()" class="btn btn-success" data-dismiss="modal">Agregar Equipo</button>
+       </div>
+       <div id="target"  class="row">
+        <div class="col-sm-12" *ngFor="let item of intputsteam.id_person" id="card">
+            <div  class="card user-card contact-item p-md"  >
+                <div class="media">
+                   
+                    <div class="media-body">
+                        <h5 class="media-heading title-color">Nombre: {{item.name}}</h5>
+                        <h5 class="media-heading title-color">fecha de nacimiento: {{item.date_birth}}</h5>
+                  
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+            
+        
+      </div>
+    </div>
+             
+            <div id="boton" class="col-6">
+                <button type="button" (click)="desactivarCreate()" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <button id="save" type="button" (click)="post_team()" class="btn btn-success" data-dismiss="modal">Save</button>
+           </div>
+    
+        </div>
+    </div>
+
+ <div id="target"  class="row">
+    <div class="col-sm-6" *ngFor="let item of team" id="card">
+        <div  class="card user-card contact-item p-md"  >
+            <div class="media">
+               
+                <div class="media-body">
+                    <h4 class="media-heading title-color">Nombre: {{item.name}}</h4>
+                    <h4 class="media-meta">Categoria: {{item.category.name}}</h4>
+                    <h6 class="media-meta">Origen: {{item.origin.country}}</h6>  
+          
+                </div>
+               
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div>

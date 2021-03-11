@@ -1,0 +1,30 @@
+#producto{
+    height: 250px;
+    width: 250px;
+}
+#buscar{
+    width: 280px;
+}
+
+#target{
+    margin-left: 5px;                                           
+ 
+}
+#panelbodi{
+    margin-left: 50px;
+    margin-right: 40px;
+
+}
+#contenedor{
+    margin-left: 5px;
+}
+#boton{
+    margin-left: 6%;
+    margin-top: 6%;
+}
+#save{
+    margin-left: 6%;
+}                                                                                               
+#card{
+    margin-top: 6%;
+}

@@ -1,0 +1,25 @@
+<div>
+    <H2>Categorias</H2>
+    <div  class="container" class="row">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <table class="table table-striped">
+                    <thead>
+                       <th>Id</th>
+                       <th>nombre</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of category">
+                            <td>{{item.id_category}}</td>
+                            <td>{{item.name}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

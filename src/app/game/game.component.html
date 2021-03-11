@@ -1,0 +1,125 @@
+<div>
+    <H2>LIGAS</H2>
+    
+     <div class="row">
+            <div class="col-sm-2">
+                <button  (click)="resetForm();get_league();get_team()"  class="btn btn-primary">Nuevo Equipo</button>
+             </div>
+      
+     </div>
+
+   
+
+    <div  id="lado"  class="form-control" class="row">
+      
+        <div  *ngIf="estate==1">
+            <div id="panelbodi" >
+            <div  class="panel-body">
+            <div class="row">
+                    <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label id="inputs" for="fecha">Fecha a Jugar</label>
+                        <input id="inputs" type="date" [(ngModel)]="inputgame.date" class="form-control" placeholder="fecha a jugar">
+                    </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label id="inputs" for="fecha">lugar a jugar</label>
+                            <input id="inputs" type="text" [(ngModel)]="inputgame.spot" class="form-control" placeholder="lugar">
+                        </div>
+                        </div>
+                <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <label id="inputs" for="id_league">Liga</label>
+					<select type="date"  id="inputs" (change)="resleague($event)"  class="form-control">
+                        <option *ngFor="let leg of league" [value]="leg.id_league">
+                            {{leg.season}}
+                        </option>
+                    </select>
+                  
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <label id="inputs" for="id_origin">Estado</label>
+					<select id="selec" name="select" [(ngModel)]="inputgame.estate">
+                        <option type="text"  selected>ida</option>
+                        <option type="text"  >vuelta</option>
+                       
+                     </select>
+                  
+                </div>
+
+               
+            </div>
+           
+                    
+                <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <label id="inputs" for="id_team">Equipos</label>
+					<select id="inputs" (change)="resteam($event)"  class="form-control">
+                        <option *ngFor="let tem of team" [value]="tem.id_team">
+                            {{tem.name}}
+                        </option>
+                    </select>
+                  
+                </div>
+
+                    <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <label id="inputs" for="id_origin">Status</label>
+                        <select id="selec" name="select" [(ngModel)]="inputgame.team.status">
+                            <option type="text"  selected>local</option>
+                            <option type="text"  >visitante</option>
+                           
+                         </select>
+                      
+                    </div> -->
+            
+        </div>
+        <div id="boton" class="col-6">
+            <button  type="button" (click)="agregar_equipos()" class="btn btn-success" data-dismiss="modal">Agregar Equipo</button>
+       </div>
+       <div id="target"  class="row">
+        <div class="col-sm-12" *ngFor="let item of inputgame.teamya" id="card">
+            <div  class="card user-card contact-item p-md"  >
+                <div class="media">
+                   
+                    <div class="media-body">
+                        <h5 class="media-heading title-color">Nombre: {{item.name}}</h5>
+                       
+                  
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+            
+        
+      </div>
+    </div>
+             
+            <div id="boton" class="col-6">
+                <button type="button" (click)="desactivarCreate()" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <button id="save" type="button" (click)="post_game()" class="btn btn-success" data-dismiss="modal">Save</button>
+           </div>
+    
+        </div>
+    </div>
+
+ <div id="target"  class="row">
+    <div class="col-sm-6" *ngFor="let item of game" id="card">
+        <div  class="card user-card contact-item p-md"  >
+            <div class="media">
+               
+                <div class="media-body">
+                    <h4 class="media-heading title-color">Estado: {{item.state}}</h4>
+                    <h4 class="media-meta">Fecha a Jugar: {{item.date}}</h4>
+                    <h4 class="media-meta">Temporada: {{item.league.season}}</h4>
+                   
+          
+                </div>
+               
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div>
+
