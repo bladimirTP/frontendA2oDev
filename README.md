@@ -1,6 +1,8 @@
 # Practica1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
+1:Una vez Clnado ejecutar npm install
+2:ng serve
 
 ## Development server
 
